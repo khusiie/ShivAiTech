@@ -65,14 +65,14 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-sora leading-tight">
             From <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Idea</span> to <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Impact</span>
             <br />
             <span className="text-4xl md:text-6xl">in 30 Days</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-satoshi">
             Tell Us Your Idea In Your Own Words. We'll Design, Build, And Launch Your 
             MVP—Fixed Price. AI-First. Hand-In-Hand.
           </p>
