@@ -43,8 +43,8 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 pt-4 transition-all duration-300 ${isScrolled
-            ? 'bg-white/10 backdrop-blur-md border-b border-white/10' // semi-transparent when scrolled
-            : 'bg-transparent'
+          ? 'bg-white/10 backdrop-blur-md border-b border-white/10' // semi-transparent when scrolled
+          : 'bg-transparent'
           }`}
       >
         {isScrolled && (
@@ -70,12 +70,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-[#9C9C9C] text-md font-regular px-3 py-2 rounded-md transition-all duration-300 
-             hover:bg-clip-text hover:text-transparent 
-             hover:bg-gradient-to-r hover:from-white hover:to-[#70BEFA]
-             hover:border hover:border-[#70BEFA]
-             hover:drop-shadow-[0_0_2.566px_rgba(112,190,250,0.75)]
-             hover:px-3 hover:py-2"
+                    className="text-[#9C9C9C] text-md font-regular px-3 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-200 hover:bg-clip-text hover:text-transparent hover:border hover:border-[#70BEFA] hover:drop-shadow-[0_0_2.566px_rgba(112,190,250,0.75)]"
                   >
                     {item.label}
                   </Link>
@@ -118,11 +113,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Changed from xl:hidden to lg:hidden */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
-              ? 'max-h-96 opacity-100'
-              : 'max-h-0 opacity-0 overflow-hidden'
+          className={`lg:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
+            ? 'max-h-96 opacity-100'
+            : 'max-h-0 opacity-0 overflow-hidden'
             }`}
         >
           <div className="bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
@@ -132,7 +127,7 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2 text-gray-300 hover:text-white text-base font-medium rounded-md transition-colors duration-300 hover:bg-white/10"
+                  className="block px-3 py-2 text-gray-300 hover:text-white text-base font-medium rounded-md transition-colors duration-300 hover:bg-white/10 text-center"
                 >
                   {item.label}
                 </Link>
@@ -140,11 +135,19 @@ const Navbar = () => {
               <Link
                 href="/brief"
                 onClick={closeMobileMenu}
-                className="flex items-center gap-2 mt-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:from-blue-500 hover:to-blue-400 w-fit"
+                className="flex items-center justify-center gap-2 mt-4 px-3 py-2 rounded-full transition-all duration-300 bg-black border-2 border-white hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/40 font-sora w-fit mx-auto"
               >
-                Tell us your brief
-                <ChevronRight className="w-4 h-4" />
+                {/* Gradient Text */}
+                <span className="text-[14px] font-semibold tracking-[-0.28px] bg-gradient-to-r from-white to-[#01ACFF] bg-clip-text text-transparent">
+                  Tell us your brief
+                </span>
+                 
+                {/* White Circle with Icon */}
+                <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                  <Image src={Icon} alt="icon" width={12} height={12} />
+                </div>
               </Link>
+              
             </div>
           </div>
         </div>
@@ -153,7 +156,7 @@ const Navbar = () => {
       {/* Mobile menu overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={closeMobileMenu}
         />
       )}
