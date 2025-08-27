@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { Sparkles, Calendar, Mail, MapPin, User } from 'lucide-react';
-
+import Image from "next/image";
+import Bg from "../../../public/assets/Hero/bg.svg";
 interface FormData {
   idea: string;
   email: string;
@@ -28,8 +29,8 @@ const HeroSection = () => {
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' 
-        ? (e.target as HTMLInputElement).checked 
+      [name]: type === 'checkbox'
+        ? (e.target as HTMLInputElement).checked
         : value
     }));
   };
@@ -37,13 +38,13 @@ const HeroSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     console.log('Form submitted:', formData);
     setIsSubmitting(false);
-    
+
     // Reset form or show success message
     alert('Thank you! We\'ll be in touch soon.');
   };
@@ -54,26 +55,31 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-cyan-500 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl"></div>
-      </div>
+  <section
+  className="relative min-h-screen overflow-hidden"
+ 
+>
+   <Image
+        src={Bg}
+        alt="Background"
+        fill
+        priority
+        className="object-cover"
+      />
+
 
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-sora leading-tight">
-            From <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Idea</span> to <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Impact</span>
+            From Idea to Impact
             <br />
-            <span className="text-4xl md:text-6xl">in 30 Days</span>
+            in 30 Days
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-satoshi">
-            Tell Us Your Idea In Your Own Words. We'll Design, Build, And Launch Your 
+            Tell Us Your Idea In Your Own Words. We'll Design, Build, And Launch Your
             MVP—Fixed Price. AI-First. Hand-In-Hand.
           </p>
 

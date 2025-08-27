@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Menu, X } from 'lucide-react';
-
+import Image from "next/image";
+import Icon from "../../../public/assets/navbar/navbuttonicon.svg";
 interface NavItem {
   label: string;
   href: string;
@@ -39,13 +40,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-gradient-to-r from-gray-900/95 via-gray-800/95 to-blue-600/95 backdrop-blur-md' 
-            : 'bg-gradient-to-r from-gray-900 via-gray-800 to-blue-600'
-        } shadow-lg shadow-blue-600/30`}
-      >
+     <nav 
+  className={`fixed top-0 left-0 right-0 z-50 pt-2 transition-all duration-300 ${
+    isScrolled 
+      ? 'bg-white/10 backdrop-blur-md border-b border-white/10' // semi-transparent when scrolled
+      : 'bg-transparent'
+  }`}
+>
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-transparent pointer-events-none" />
         
@@ -73,16 +75,21 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <Link
-              href="/brief"
-              className="hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:from-blue-500 hover:to-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/40"
-            >
-              Tell us your brief
-              <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center">
-                <ChevronRight className="w-3 h-3 text-blue-600" />
-              </div>
-            </Link>
+ <Link
+  href="/brief"
+  className={`hidden md:flex items-center justify-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 bg-black border-2 border-white hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/40 font-sora`}
+>
+  {/* Gradient Text */}
+  <span className="text-[18px] font-semibold tracking-[-0.36px] bg-gradient-to-r from-white to-[#01ACFF] bg-clip-text text-transparent">
+    Tell us your idea
+  </span>
+
+  {/* White Circle with Icon */}
+  <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
+    <Image src={Icon} alt="icon" width={16} height={16} />
+  </div>
+</Link>
+
 
             {/* Mobile menu button */}
             <button
