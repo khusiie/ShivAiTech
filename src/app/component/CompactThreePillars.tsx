@@ -1,8 +1,9 @@
 'use client';
-
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Zap, DollarSign, Handshake } from 'lucide-react';
-
+import { Star, ChevronRight } from 'lucide-react';
+import star from "../../../public/assets/3pillor/star.svg";
 interface Pillar {
   number: string;
   title: string;
@@ -59,23 +60,36 @@ const CompactThreePillars = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gray-900 relative overflow-hidden"
+      className="py-20 bg-[#000000] relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#000000] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#000000] rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full px-4 py-2 mb-6">
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-            <span className="text-gray-300 text-sm font-medium">OUR APPROACH</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+        <div className="text-center mb-16 font-sora">
+           <div className="inline-flex items-center gap-2 bg-gray-900/80 backdrop-blur-sm border-1 border-white-600/80 rounded-full px-2 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
+<div className="flex items-center justify-center w-6 h-6 bg-gradient-to-br from-blue-400/50 to-blue-600/30 backdrop-blur-sm rounded-full shadow-inner">
+  <Image 
+    src={star}
+    alt="Star"
+    width={20}
+    height={20}
+    className="object-contain"
+  />
+</div>
+      {/* Text */}
+      <span className="text-white text-sm font-regular tracking-wide">
+        3 Pillars
+      </span>
+      
+      {/* Arrow Icon */}
+      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors duration-200" />
+    </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white font-sora">
             Our 3 Core Pillars
           </h2>
         </div>
@@ -98,14 +112,7 @@ const CompactThreePillars = () => {
                 }
                 hover:transform hover:scale-[1.02] group-hover:shadow-xl
               `}>
-                {/* Highlighted Badge */}
-                {pillar.isHighlighted && (
-                  <div className="absolute -top-3 left-6">
-                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      MOST POPULAR
-                    </div>
-                  </div>
-                )}
+             
 
                 <div className="flex items-center gap-6">
                   {/* Number Badge */}

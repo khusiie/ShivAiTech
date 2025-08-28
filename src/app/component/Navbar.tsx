@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from "next/image";
 import Icon from "../../../public/assets/navbar/navbuttonicon.svg";
 
