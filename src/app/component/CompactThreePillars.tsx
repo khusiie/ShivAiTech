@@ -1,8 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { Zap, DollarSign, Handshake } from 'lucide-react';
-import { Star, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import icon from "../../../public/assets/3pillor/icon.svg";
 import star from "../../../public/assets/3pillor/star.svg";
 
@@ -91,13 +90,19 @@ const CompactThreePillars = () => {
             {/* Arrow Icon */}
             <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors duration-200" />
           </div>
-          <h2 className="text-4xl md:text-7xl font-bold text-white font-sora">
-            Our 3 Core Pillars
-          </h2>
+         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora leading-tight"
+   style={{
+     background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
+     backgroundClip: 'text',
+     WebkitBackgroundClip: 'text',
+     WebkitTextFillColor: 'transparent'
+   }}>
+ Our 3 Core Pillars
+</h2>
         </div>
 
         {/* Pillars List */}
-        <div className="max-w-5xl mx-auto space-y-4">
+        <div className="max-w-5xl mx-auto space-y-3 md:space-y-4">
           {pillars.map((pillar, index) => (
             <div
               key={pillar.number}
@@ -108,7 +113,7 @@ const CompactThreePillars = () => {
             >
               <div 
                 className={`
-                  relative py-6 pl-12 pr-6 transition-all duration-300 rounded-lg
+                  relative py-4 pl-4 pr-4 md:py-6 md:pl-12 md:pr-6 transition-all duration-300 rounded-lg
                   hover:transform hover:scale-[1.02] group-hover:shadow-xl
                   ${pillar.isHighlighted 
                     ? 'bg-gradient-to-r from-[#01AAFF] via-[#01AAFF]/80 to-black/60' 
@@ -119,10 +124,10 @@ const CompactThreePillars = () => {
                   background: 'linear-gradient(90deg, #01AAFF 0%, #000 62.5%)'
                 } : undefined}
               >
-                <div className="flex items-center gap-8 md:gap-16 lg:gap-24">
+                <div className="flex items-center gap-3 sm:gap-4 md:gap-8 lg:gap-16 xl:gap-24">
                   {/* Number Badge */}
                   <div className={`
-                    flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-bold text-8xl transition-all duration-300
+                    flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-8xl transition-all duration-300
                     ${pillar.isHighlighted
                       ? 'text-white shadow-lg'
                       : 'text-gray-300'
@@ -134,7 +139,7 @@ const CompactThreePillars = () => {
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <h3 className={`
-                      text-xl md:text-2xl font-bold mb-2 transition-colors duration-300
+                      text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 transition-colors duration-300 leading-tight
                       ${pillar.isHighlighted
                         ? 'text-white'
                         : 'text-white group-hover:text-cyan-400'
@@ -143,7 +148,7 @@ const CompactThreePillars = () => {
                       {pillar.title}
                     </h3>
                     <p className={`
-                      text-sm md:text-base leading-relaxed transition-colors duration-300
+                      text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300
                       ${pillar.isHighlighted
                         ? 'text-gray-200'
                         : 'text-gray-400'
@@ -155,13 +160,19 @@ const CompactThreePillars = () => {
 
                   {/* Icon */}
                   <div className={`
-                    flex-shrink-0 p-3 rounded-xl transition-all duration-300
+                    flex-shrink-0 p-2 md:p-3 transition-all duration-300
                     ${pillar.isHighlighted
                       ? 'text-white'
                       : 'text-gray-400 group-hover:text-gray-300'
                     }
                   `}>
-                    {pillar.icon}
+                    <Image 
+                      src={icon} 
+                      alt="AI Icon" 
+                      width={40} 
+                      height={50}
+                      className="w-8 h-10 sm:w-10 sm:h-12 md:w-12 md:h-15 lg:w-14 lg:h-18"
+                    />
                   </div>
                 </div>
               </div>

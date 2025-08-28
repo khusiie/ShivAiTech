@@ -71,11 +71,17 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-sora leading-tight">
-            From Idea to Impact
-            <br />
-            in 30 Days
-          </h1>
+         <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sora leading-tight"
+   style={{
+     background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
+     backgroundClip: 'text',
+     WebkitBackgroundClip: 'text',
+     WebkitTextFillColor: 'transparent'
+   }}>
+ From Idea to Impact
+ <br />
+ in 30 Days
+</h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-satoshi">
