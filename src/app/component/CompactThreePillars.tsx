@@ -61,7 +61,7 @@ const CompactThreePillars = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-[#000000] relative overflow-hidden"
+      className="py-20 bg-[#000000] relative overflow-hidden font-sora"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -72,7 +72,7 @@ const CompactThreePillars = () => {
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16 font-sora">
-          <div className="inline-flex items-center gap-2 bg-gray-900/80 backdrop-blur-sm border-1 border-white-600/80 rounded-full px-2 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
+          <div className="inline-flex items-center gap-2 bg-[rgba(244,245,246,0.10)] backdrop-blur-sm border-1 border-white-600/80 rounded-full px-2 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
             <div className="flex items-center justify-center w-6 h-6 bg-gradient-to-br from-blue-400/50 to-blue-600/30 backdrop-blur-sm rounded-full shadow-inner">
               <Image
                 src={star}
