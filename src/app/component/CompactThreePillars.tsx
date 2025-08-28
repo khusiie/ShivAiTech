@@ -90,7 +90,7 @@ const CompactThreePillars = () => {
             {/* Arrow Icon */}
             <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors duration-200" />
           </div>
-         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora leading-tight"
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sora leading-tight"
    style={{
      background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
      backgroundClip: 'text',
@@ -99,6 +99,7 @@ const CompactThreePillars = () => {
    }}>
  Our 3 Core Pillars
 </h2>
+      
         </div>
 
         {/* Pillars List */}
@@ -139,7 +140,7 @@ const CompactThreePillars = () => {
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <h3 className={`
-                      text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 transition-colors duration-300 leading-tight
+                      text-lg sm:text-xl md:text-4xl lg:text-4xl font-bold mb-1 md:mb-2 transition-colors duration-300 leading-tight
                       ${pillar.isHighlighted
                         ? 'text-white'
                         : 'text-white group-hover:text-cyan-400'
@@ -148,7 +149,7 @@ const CompactThreePillars = () => {
                       {pillar.title}
                     </h3>
                     <p className={`
-                      text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300
+                      text-xs sm:text-sm md:text-xl leading-relaxed transition-colors duration-300
                       ${pillar.isHighlighted
                         ? 'text-gray-200'
                         : 'text-gray-400'
