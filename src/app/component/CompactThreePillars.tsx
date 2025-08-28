@@ -108,7 +108,7 @@ const CompactThreePillars = () => {
             >
               <div 
                 className={`
-                  relative p-6 transition-all duration-300 rounded-lg
+                  relative py-6 pl-12 pr-6 transition-all duration-300 rounded-lg
                   hover:transform hover:scale-[1.02] group-hover:shadow-xl
                   ${pillar.isHighlighted 
                     ? 'bg-gradient-to-r from-[#01AAFF] via-[#01AAFF]/80 to-black/60' 
@@ -119,7 +119,7 @@ const CompactThreePillars = () => {
                   background: 'linear-gradient(90deg, #01AAFF 0%, #000 62.5%)'
                 } : undefined}
               >
-                <div className="flex items-center gap-[161px]">
+                <div className="flex items-center gap-8 md:gap-16 lg:gap-24">
                   {/* Number Badge */}
                   <div className={`
                     flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-bold text-8xl transition-all duration-300
