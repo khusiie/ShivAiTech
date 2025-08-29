@@ -3,6 +3,7 @@ import Navbar from "./component/Navbar";
 import HeroSection from "./component/HeroSection";
 import CompactThreePillars from "./component/CompactThreePillars";
 import HowitWorks from "./component/HowitWorks";
+import WhatWeBuild from "./component/whatwebuild";
 export default function Home() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection/>
       <CompactThreePillars/>
       <HowitWorks/>
+      <WhatWeBuild/>
     </div>
   );
 }

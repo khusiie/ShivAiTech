@@ -2,7 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, User, HelpCircle, Rocket, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-
+import first from "../../../public/assets/howitworks/first.svg";
+import second from "../../../public/assets/howitworks/second.svg";
+import third  from "../../../public/assets/howitworks/third.svg";
 interface Step {
     id: number;
     icon: React.ReactNode;
@@ -20,21 +22,46 @@ const HowitWorks = () => {
     const steps: Step[] = [
         {
             id: 1,
-            icon: <MessageCircle className="w-6 h-6" />,
+         icon: (
+  <Image 
+    src={first} 
+    alt="Tell Us Your Idea Icon" 
+    width={24} 
+    height={24} 
+    className="w-6 h-6 " 
+  />
+),
+
             title: "Tell Us Your Idea",
             description: "In Your Own Words, Right In The Phone! But...",
             isActive: activeStep === 1
         },
         {
             id: 2,
-            icon: <HelpCircle className="w-6 h-6" />,
+                icon: (
+  <Image 
+    src={second} 
+    alt="Tell Us Your Idea Icon" 
+    width={24} 
+    height={24} 
+    className="w-6 h-6 " 
+  />
+),
             title: "Answer Any Quick Questions",
             description: "Our ShivAI Clarifies Scope Instantly.",
             isActive: activeStep === 2
         },
         {
             id: 3,
-            icon: <Rocket className="w-6 h-6" />,
+                  icon: (
+  <Image 
+    src={third} 
+    alt="Tell Us Your Idea Icon" 
+    width={24} 
+    height={24} 
+    className="w-6 h-6 " 
+  />
+),
             title: "Launch",
             description: "Get A Working MVP In 30—45 Days, Fixed-Price.",
             isActive: activeStep === 3
@@ -62,7 +89,7 @@ const HowitWorks = () => {
 
     // Auto-cycle through steps (pause when hovering)
     useEffect(() => {
-        if (hoveredStep !== null) return; // Don't auto-cycle when hovering
+        if (hoveredStep !== null) return; 
         
         const interval = setInterval(() => {
             setActiveStep(prev => prev === 3 ? 1 : prev + 1);
@@ -115,7 +142,6 @@ const HowitWorks = () => {
                 );
             
             default:
-                return null;
         }
     };
 
@@ -126,8 +152,8 @@ const HowitWorks = () => {
         >
             <div className="relative z-10 container mx-auto px-4">
                 {/* Section Header */}
-                <div className="text-center mb-12 md:mb-16">
-                    <div className="inline-flex items-center gap-2 bg-[rgba(244,245,246,0.10)] backdrop-blur-sm border border-gray-600/80 rounded-full px-4 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
+                <div className="text-center mb-12 md:mb-16 font-sora">
+                    <div className="inline-flex items-center gap-2 bg-[rgba(244,245,246,0.10)] rounded-full backdrop-blur-sm border border-gray-600/80 px-4 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
                         <div className="flex items-center justify-center w-6 h-6 bg-gradient-to-br from-blue-400/50 to-blue-600/30 backdrop-blur-sm rounded-full shadow-inner">
                             <img
                                 src="/assets/3pillor/star.svg"
@@ -155,8 +181,8 @@ const HowitWorks = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="max-w-7xl mx-auto font-sora">
+                    <div className="grid lg:grid-cols-2 gap-6 lg:gap-4 items-center">
 
                         {/* Left Side - Dynamic Card Images */}
                         <div className="relative min-h-[500px] flex items-center justify-center">
@@ -165,8 +191,8 @@ const HowitWorks = () => {
                             </div>
                         </div>
 
-                       {/* Right Side - Steps */}
-<div className="space-y-4 w-full max-w-[500px] md:max-w-[600px]">
+{/* Right Side - Steps */}
+<div className="space-y-8 w-full max-w-[500px] md:max-w-[550px]">
   {steps.map((step) => {
     const isCurrentlyActive =
       hoveredStep === step.id ||
@@ -176,38 +202,40 @@ const HowitWorks = () => {
       <div
         key={step.id}
         className={`
-          relative p-4 md:p-6 transition-all duration-500 cursor-pointer
+          relative p-6 md:p-8 transition-all duration-500 cursor-pointer 
           ${isCurrentlyActive
             ? 'bg-blue-600/20 border-2 border-blue-500/50 shadow-lg shadow-blue-500/20'
             : 'bg-[rgba(0,102,153,0.20)] border border-gray-800 hover:bg-gray-900/50'
           }
         `}
         style={{
-          borderRadius: '20px',
+          borderRadius: '20px', // a bit larger for nicer look
           flexShrink: 0,
         }}
         onMouseEnter={() => setHoveredStep(step.id)}
         onMouseLeave={() => setHoveredStep(null)}
         onClick={() => setActiveStep(step.id)}
       >
-        {/* Step Number & Icon */}
-        <div className="flex items-start gap-3 md:gap-4">
+        {/* Step Icon */}
+        <div className="flex items-start gap-4">
           <div
             className={`
-              flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-all duration-300
+              flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-300
               ${isCurrentlyActive
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'bg-gray-800 text-gray-400'
               }
             `}
           >
-            {step.icon}
+            <div className="scale-90 md:scale-100">
+              {step.icon}
+            </div>
           </div>
 
           <div className="flex-1 text-left">
             <h3
               className={`
-                text-lg md:text-xl font-bold mb-1 transition-colors duration-300
+                text-lg md:text-xl font-bold font-sora mb-2 transition-colors duration-300
                 ${isCurrentlyActive ? 'text-white' : 'text-white'}
               `}
               style={{
@@ -232,25 +260,7 @@ const HowitWorks = () => {
               {step.description}
             </p>
           </div>
-
-          {/* Step Number Badge */}
-          <div
-            className={`
-              w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-bold transition-all duration-300
-              ${isCurrentlyActive
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-800 text-gray-500'
-              }
-            `}
-          >
-            {step.id}
-          </div>
         </div>
-
-        {/* Active Step Indicator */}
-        {isCurrentlyActive && (
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600 rounded-r-full"></div>
-        )}
       </div>
     );
   })}
