@@ -4,6 +4,7 @@ import HeroSection from "./component/HeroSection";
 import CompactThreePillars from "./component/CompactThreePillars";
 import HowitWorks from "./component/HowitWorks";
 import WhatWeBuild from "./component/whatwebuild";
+import Man from "./component/man";
 export default function Home() {
   return (
     <div>
@@ -12,6 +13,7 @@ export default function Home() {
       <CompactThreePillars/>
       <HowitWorks/>
       <WhatWeBuild/>
+<Man/>
     </div>
   );
 }

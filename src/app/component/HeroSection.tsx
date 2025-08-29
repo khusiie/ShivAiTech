@@ -109,73 +109,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Form Grid */}
-            <div className="grid md:grid-cols-2 gap-4">
-              {/* Email */}
-              <div className="relative">
-                <div className="absolute left-4 top-4 text-gray-400">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Email address"
-                  className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  required
-                />
-              </div>
-
-              {/* Name */}
-              <div className="relative">
-                <div className="absolute left-4 top-4 text-gray-400">
-                  <User className="w-5 h-5" />
-                </div>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Name"
-                  className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Company and Toggle */}
-            <div className="grid md:grid-cols-2 gap-4 items-end">
-              {/* Company */}
-              <div className="relative">
-                <div className="absolute left-4 top-4 text-gray-400">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Company"
-                  className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                />
-              </div>
-
-              {/* Need in 30 Days Toggle */}
-              <div className="flex items-center justify-between bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-6 py-4">
-                <span className="text-white font-medium">Need in 30 Days?</span>
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="needIn30Days"
-                    checked={formData.needIn30Days}
-                    onChange={handleInputChange}
-                    className="sr-only peer"
-                  />
-                  <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
-                </label>
-              </div>
-            </div>
+          
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">

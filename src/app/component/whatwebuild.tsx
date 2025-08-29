@@ -1,21 +1,27 @@
 import { FC } from "react";
-import { FaMobileAlt, FaServer, FaNetworkWired } from "react-icons/fa";
-import { SiWeb3Dotjs } from "react-icons/si";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { AiOutlineRobot } from "react-icons/ai";
+import Image from "next/image";
+import Image1 from "../../../public/assets/whatwebuild/1.svg";
+import Image2 from "../../../public/assets/whatwebuild/2.svg";
+import Image3 from "../../../public/assets/whatwebuild/3.svg";
+import Image4 from "../../../public/assets/whatwebuild/4.svg";
+import Image5 from "../../../public/assets/whatwebuild/5.svg";
+import Image6 from "../../../public/assets/whatwebuild/6.svg";
 
 interface BuildCardProps {
-  icon: React.ReactNode;
+  image: any;
   title: string;
-  description: string;
 }
 
-const BuildCard: FC<BuildCardProps> = ({ icon, title, description }) => {
+const BuildCard: FC<BuildCardProps> = ({ image, title }) => {
   return (
-    <div className="bg-[#0A0F1C] border border-gray-800 rounded-2xl p-6 flex flex-col gap-4 hover:border-blue-500 transition">
-      <div className="text-3xl text-blue-400">{icon}</div>
-      <h3 className="text-xl font-semibold text-white">{title}</h3>
-      <p className="text-gray-400 text-sm">{description}</p>
+    <div className="hover:scale-105 transition-transform duration-300">
+      <Image 
+        src={image} 
+        alt={title}
+        width={400}
+        height={300}
+        className="object-contain w-full h-auto"
+      />
     </div>
   );
 };
@@ -23,51 +29,50 @@ const BuildCard: FC<BuildCardProps> = ({ icon, title, description }) => {
 const WhatWeBuild: FC = () => {
   const items = [
     {
-      icon: <AiOutlineRobot />,
-      title: "AI Apps & Agents",
-      description: "Gen-AI products, voice bots, RAG apps, and analytics copilots built to scale."
+      image: Image1,
+      title: "AI Apps & Agents"
     },
     {
-      icon: <MdOutlineDashboardCustomize />,
-      title: "SaaS Platforms",
-      description: "Subscriptions, roles, dashboards, and billing systems — end-to-end SaaS foundations."
+      image: Image2,
+      title: "SaaS Platforms"
     },
     {
-      icon: <SiWeb3Dotjs />,
-      title: "Web3 DApps",
-      description: "Wallets, NFT gating, and on-chain logic — built where Web3 is truly used."
+      image: Image3,
+      title: "Web3 DApps"
     },
     {
-      icon: <FaMobileAlt />,
-      title: "Mobile Apps",
-      description: "Cross-platform builds with a native feel and smooth performance."
+      image: Image4,
+      title: "Mobile Apps"
     },
     {
-      icon: <FaNetworkWired />,
-      title: "Enterprise Integrations",
-      description: "CRM/ERP connections, data pipelines, and automations that unify your workflows."
+      image: Image5,
+      title: "Enterprise Integrations"
     },
     {
-      icon: <FaServer />,
-      title: "Data & DevOps",
-      description: "Secure infrastructure, CI/CD pipelines, and observability baked in from day one."
+      image: Image6,
+      title: "Data & DevOps"
     }
   ];
 
   return (
-    <section className="py-16 bg-[#050A16]">
+    <section className="py-16 bg-[#161616]">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">
-          What We Build
-        </h2>
+       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-bold font-sora leading-tight mb-12 text-center"
+                        style={{
+                            background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
+                            backgroundClip: 'text',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent'
+                        }}>
+                        What we Build
+                    </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <BuildCard
               key={index}
-              icon={item.icon}
+              image={item.image}
               title={item.title}
-              description={item.description}
             />
           ))}
         </div>
