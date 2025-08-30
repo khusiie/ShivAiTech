@@ -65,7 +65,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation - centered */}
             <div className="hidden lg:flex justify-center font-satoshi">
-              <div className="flex items-center justify-center w-[380px] h-[54px] rounded-[9px] bg-[#161616] border border-[#222] px-0 gap-6">
+              <div className="flex items-center justify-center w-[380px] h-[54px] rounded-[9px] bg-[#161616] border border-[#4a4a4a] px-0 gap-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}

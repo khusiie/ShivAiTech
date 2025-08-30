@@ -34,3 +34,10 @@ body {
 .font-satoshi {
   font-family: 'Satoshi', sans-serif;
 }
+
+.input-gradient-placeholder::placeholder {
+  background: linear-gradient(90deg, #FFF 0%, #66CDFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

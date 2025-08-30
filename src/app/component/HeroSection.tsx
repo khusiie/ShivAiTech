@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, Calendar, Mail, MapPin, User } from 'lucide-react';
+import star from "../../../public/assets/3pillor//star.svg";
 import Image from "next/image";
+import Icon from "../../../public/assets/navbar/navbuttonicon.svg";
 import Bg from "../../../public/assets/Hero/bg.svg";
+import mic from "../../../public/assets/Hero/mic.svg";
 interface FormData {
   idea: string;
   email: string;
@@ -55,99 +57,132 @@ const HeroSection = () => {
   };
 
   return (
-  <section
-  className="relative min-h-screen overflow-hidden"
- 
->
-   <Image
+
+
+    <section className="relative min-h-screen overflow-hidden  font-sora">
+
+
+
+
+      <Image
         src={Bg}
         alt="Background"
         fill
         priority
         className="object-cover"
       />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-600/10"></div>
 
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
+      </div>
 
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           {/* Main Heading */}
-         <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sora leading-tight"
-   style={{
-     background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
-     backgroundClip: 'text',
-     WebkitBackgroundClip: 'text',
-     WebkitTextFillColor: 'transparent'
-   }}>
- From Idea to Impact
- <br />
- in 30 Days
-</h1>
+          <h1 className="text-6xl md:text-[78px] font-bold mb-6 leading-tight"
+            style={{
+              background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+            From Idea to Impact
+            <br />
+            in 60 Days
+          </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-satoshi">
-            Tell Us Your Idea In Your Own Words. We'll Design, Build, And Launch Your
+          <p className="text-2xl md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto font-normal leading-relaxed font-satoshi">
+            Tell Us Your Idea In Your Own Words. We'll Design, Build, And Launch Your<br/>
             MVP—Fixed Price. AI-First. Hand-In-Hand.
           </p>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 mb-8">
-            {/* Idea Input */}
-            <div className="relative">
-              <div className="absolute left-4 top-4 text-gray-400">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <textarea
-                name="idea"
-                value={formData.idea}
-                onChange={handleInputChange}
-                placeholder="I want an AI app that books salon appointments via voice..."
-                className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none h-32 transition-all duration-300"
-                required
-              />
-              <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                {formData.idea.length}/500
-              </div>
-            </div>
 
-          
+{/* Search-style Input */}
+<div className="max-w-2xl mx-auto mb-8">
+  <div className="relative">
+    {/* Gradient Border Wrapper */}
+    <div className="relative rounded-[25.875px] p-[1px] bg-gradient-to-b from-white/80 to-white/20">
+      {/* Input */}
+      <input
+        type="text"
+        name="idea"
+        value={formData.idea}
+        onChange={handleInputChange}
+        placeholder="ask anything..."
+        className="w-full 
+                   rounded-[23px]   /* slightly smaller for padding effect */
+                   border-none
+                   bg-black/90 
+                   pl-12 pr-16 py-4 
+                   text-lg 
+                   focus:outline-none
+                   input-gradient-placeholder"
+      />
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              {/* Do the magic button */}
-              <button
-                type="button"
-                onClick={handleDoMagic}
-                className="group bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:from-cyan-400 hover:to-blue-400 hover:shadow-2xl hover:shadow-cyan-500/25 hover:-translate-y-1 flex items-center gap-2"
-              >
-                <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                Do the magic
-              </button>
+      {/* Left Star Icon */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center">
+        <Image
+          src={star}
+          alt="Star icon"
+          width={20}
+          height={20}
+          className="w-5 h-5"
+        />
+      </div>
 
-              {/* Book consultation button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:-translate-y-1 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                {isSubmitting ? 'Booking...' : 'Book a 15-min consult'}
-                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center ml-2">
-                  <span className="text-sm">→</span>
+      {/* Right Mic Button */}
+      <button
+        onClick={handleDoMagic}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-600 
+                   text-white rounded-full p-3 transition-colors duration-300 group"
+      >
+        <Image
+          src={mic}
+          alt="Microphone icon"
+          width={20}
+          height={20}
+          className="w-4 h-4 transform scale-150 group-hover:scale-175 transition-transform duration-300"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+          {/* Book consultation button */}
+          <div className="flex justify-center mb-12">
+            <button
+              onClick={() => console.log('Book consult clicked')}
+              className="flex items-center justify-center gap-2 mt-4 px-3 py-3 rounded-full transition-all duration-300 bg-black border-2 border-white hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/40 font-sora w-fit mx-auto"
+            >
+              <span className="text-[14px] font-semibold tracking-[-0.28px] bg-gradient-to-r from-white to-[#01ACFF] bg-clip-text text-transparent">
+                Book a 15-min consult
+              </span>
+              <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center ml-1 group-hover:translate-x-0.5 transition-transform duration-300">
+                <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                  <Image src={Icon} alt="icon" width={12} height={12} />
                 </div>
-              </button>
-            </div>
-          </form>
+              </div>
+            </button>
+          </div>
 
-          {/* Bottom Text */}
-          <p className="text-gray-400 text-sm max-w-md mx-auto">
+          <p className="text-gray-400 text-sm max-w-6xl mx-auto">
             Architected in the U.S. Engineered By A Handpicked Global Team.
           </p>
+
         </div>
       </div>
 
-      {/* Decorative Elements */}
+
+      {/* Decorative gradient at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none"></div>
     </section>
+
   );
 };
 
