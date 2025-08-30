@@ -169,7 +169,7 @@ const HeroSection = () => {
             </button>
           </div>
 
-          <p className="text-gray-400 text-sm max-w-6xl mx-auto">
+          <p className="text-white text-sm md:text-lg max-w-6xl mx-auto">
             Architected in the U.S. Engineered By A Handpicked Global Team.
           </p>
 
