@@ -188,11 +188,11 @@ const HowitWorks = () => {
         <div className="relative min-h-[350px] flex items-center justify-center">
             {/* ShivAI Logo - positioned at top center, half outside */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-  <div className="w-18 h-18 md:w-20 md:h-20 bg-black/20 rounded-full flex items-center justify-center shadow-lg  overflow-hidden">
+  <div className="w-18 h-18 md:w-24 md:h-24 bg-black/20 rounded-full flex items-center justify-center shadow-lg  border-1 border-black/40  overflow-hidden">
     <Image
       src={Shivlogo}   // using imported image
       alt="ShivAI Logo"
-      className="object-contain w-16 h-16"
+      className="object-contain w-15 h-15"
       priority
     />
   </div>
@@ -252,7 +252,7 @@ const HowitWorks = () => {
                 ${isCurrentlyActive ? 'text-white' : 'text-white'}
               `}
               style={{
-                fontFamily: 'Satoshi',
+                fontFamily: 'sora',
                 letterSpacing: '-0.4px',
                 textTransform: 'capitalize',
               }}
@@ -262,7 +262,7 @@ const HowitWorks = () => {
             <p
               className={`
                 text-xs md:text-sm leading-relaxed transition-colors duration-300
-                ${isCurrentlyActive ? 'text-blue-200' : 'text-white'}
+                ${isCurrentlyActive ? 'text-blue-200' : 'text-[#FFF]'}
               `}
               style={{
                 fontFamily: 'Satoshi',
