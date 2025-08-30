@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from "next/image";
 import Icon from "../../../public/assets/navbar/navbuttonicon.svg";
-
+import Shivlogo from "../../../public/assets/navbar/ShivAi.svg";
 interface NavItem {
   label: string;
   href: string;
@@ -53,15 +53,21 @@ const Navbar = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Updated flex container with equal spacing */}
           <div className="flex items-center justify-center h-16 gap-8">
-            {/* Logo with equal flex basis */}
-            <div className="flex-1 flex justify-start">
-              <Link
-                href="/"
-                className="text-3xl font-bold text-white hover:text-blue-300 transition-colors duration-300 hover:drop-shadow-[0_0_10px_rgba(147,197,253,0.5)]"
-              >
-                ShivAi
-              </Link>
-            </div>
+
+
+{/* Logo with equal flex basis */}
+<div className="flex-1 flex justify-start">
+  <Image
+    src={Shivlogo}   // ✅ use the imported variable directly
+    alt="ShivAi Logo"
+    width={120}
+    height={40}
+    className="h-8 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(147,197,253,0.7)]"
+    priority
+  />
+</div>
+
+
 
             {/* Desktop Navigation - centered */}
             <div className="hidden lg:flex justify-center font-satoshi">
