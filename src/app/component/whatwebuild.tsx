@@ -55,7 +55,7 @@ const WhatWeBuild: FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#161616]">
+    <section className="py-16 bg-black">
       <div className="container mx-auto px-6">
        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-bold font-sora leading-tight mb-12 text-center"
                         style={{

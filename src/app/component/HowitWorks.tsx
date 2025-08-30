@@ -148,12 +148,12 @@ const HowitWorks = () => {
     return (
         <section
             ref={sectionRef}
-            className="py-16 md:py-20 bg-[#0A0A0A] relative overflow-hidden font-sora"
+            className="py-16 md:py-20 bg-black relative overflow-hidden font-sora"
         >
             <div className="relative z-10 container mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center mb-12 md:mb-16 font-sora">
-                    <div className="inline-flex items-center gap-2 bg-[rgba(244,245,246,0.10)] rounded-full backdrop-blur-sm border border-gray-600/80 px-4 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
+                    <div className="inline-flex items-center gap-2 bg-[rgba(244,245,246,0.10)] rounded-full backdrop-blur-sm border border-gray-600/80 px-2 py-2 mb-6 hover:bg-gray-800/80 hover:border-gray-500/90 transition-all duration-200 cursor-pointer group">
                         <div className="flex items-center justify-center w-6 h-6 bg-gradient-to-br from-blue-400/50 to-blue-600/30 backdrop-blur-sm rounded-full shadow-inner">
                             <img
                                 src="/assets/3pillor/star.svg"
@@ -169,7 +169,7 @@ const HowitWorks = () => {
                         <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors duration-200" />
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-bold font-sora leading-tight"
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold font-sora leading-tight"
                         style={{
                             background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
                             backgroundClip: 'text',
