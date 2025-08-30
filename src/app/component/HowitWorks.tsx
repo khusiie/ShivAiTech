@@ -170,7 +170,7 @@ const HowitWorks = () => {
         <ChevronRight className="w-3 h-3 text-gray-400 group-hover:text-gray-300 transition-colors duration-200" />
     </div>
      
-    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold font-sora leading-tight"
+    <h2 className="text-3xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-6xl font-bold font-sora leading-tight"
         style={{
             background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
             backgroundClip: 'text',
@@ -183,9 +183,9 @@ const HowitWorks = () => {
 
 {/* Main Content */}
 <div className="max-w-5xl mx-auto font-sora pt-12">
-    <div className="grid lg:grid-cols-2  items-center">
+    <div className="grid lg:grid-cols-2  gap-6 lg:gap-2 items-center">
    {/* Left Side - Dynamic Card Images */}
-        <div className="relative min-h-[350px] flex items-center justify-center">
+        <div className="relative min-h-[350px] flex items-center  justify-center">
             {/* ShivAI Logo - positioned at top center, half outside */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
   <div className="w-18 h-18 md:w-24 md:h-24 bg-black/20 rounded-full flex items-center justify-center shadow-lg  border-1 border-black/40  overflow-hidden">
