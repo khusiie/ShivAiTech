@@ -65,7 +65,7 @@ const CompactThreePillars = () => {
         </div>
 
         {/* Pillars */}
-        <div className="max-w-5xl mx-auto space-y-3">
+        <div className="max-w-5xl mx-auto space-y-6">
           {pillars.map((pillar, index) => {
             const isHovered = hoveredIndex === index;
             

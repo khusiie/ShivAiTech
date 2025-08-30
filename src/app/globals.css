@@ -41,3 +41,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+:root {
+  --Shiv-Blue: linear-gradient(79deg, #FFF -4.08%, #3DCAFF 82.24%);
+}
+
+
