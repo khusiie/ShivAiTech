@@ -52,7 +52,7 @@ const CompactThreePillars = () => {
           </div>
           
           <h2 
-            className="text-3xl md:text-4xl font-bold leading-tight"
+            className="text-3xl md:text-6xl font-bold leading-tight"
             style={{
               background: 'linear-gradient(180deg, #FFF 30%, #A5C7D4 100%)',
               backgroundClip: 'text',
